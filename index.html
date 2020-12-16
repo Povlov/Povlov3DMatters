@@ -1,31 +1,74 @@
-H1 Start en endcodes in Polarcloud
-H2 For my printer Adventurer3 these codes are pre-defined in Polarcloud (https://polar3d.com/)
-Startcode:
-xgcode 1.0 ;start gcode
-M140 S {TEMPBED} ; Temperature to set the platform to, in degrees C
-M104 S {TEMP0} T0 ; Temperature to set the toolhead to  T0 default or T1 
-M104 S0 T1 ; Set second toolhead to 0 degrees C non existent in Adventurer 3
-M107 ; Disable cooling fan
-G90 ; All coordinates from now on are absolute relative to the origin of the machine
-G28 ; Move to the home position
-M132 X Y Z A B ; Load current home position from EEPROM
-G1 Z50.00 F400 ; Move to pos Z50 at feedrate F400
-G161 X Y F3300 ; unknown
-M6 T0 ; Wait for the toolhead to reach target temperature
-M907 X100 Y100 Z40 A80 B20 ; Set digital potentiometer value 
-M108 T0 ; Set toolhead to T0
-G1 Z.20 F400 ; Move to pos Z0.20 at feedrate F400
+<p style="color: red; font-weight: bold">>>>>>  gd2md-html alert:  ERRORs: 0; WARNINGs: 0; ALERTS: 1.</p>
+<ul style="color: red; font-weight: bold"><li>See top comment block for details on ERRORs and WARNINGs. <li>In the converted Markdown or HTML, search for inline alerts that start with >>>>>  gd2md-html alert:  for specific instances that need correction.</ul>
 
-endcode:
-M140 S0 : Set the platform to 0 degrees C
-M104 S0 T0 ; Set toolhead to 0 degrees C
-G28 X Y ; Move to home position
-M132 X Y Z A B ; Load current home position from EEPROM
-G91 ; All coordinates from now on are relative to the last position
-M18 ; disable stepper motors all axes
+<p style="color: red; font-weight: bold">Links to alert messages:</p><a href="#gdcalert1">alert1</a>
 
-Note:  The print results in Polarcloud have been good so far.
-The {} may mean that the value from the setting of the profile is assumed. Polarcloud creates the slice itself, or processes a strange gcode file; in that case, the temperature instructions are already set with the controller prior to the start of the print job. Earlier I found that a certain gcode that apparently did not contain the correct temperature instructions was processed at the set temperature. 
+<p style="color: red; font-weight: bold">>>>>> PLEASE check and correct alert issues and delete this message and the inline alerts.<hr></p>
 
 
-Translated with www.DeepL.com/Translator (free version)
+**PLA filament specs op de website**
+
+
+<table>
+  <tr>
+   <td>Spool Diameter
+   </td>
+   <td>180 mm [7.1 in]
+   </td>
+  </tr>
+  <tr>
+   <td>Spool Hub Hole
+   </td>
+   <td>20 mm [0.8 in]
+   </td>
+  </tr>
+  <tr>
+   <td>Spool Width
+   </td>
+   <td>76 mm [3.0 in]
+   </td>
+  </tr>
+  <tr>
+   <td>Filament Diameter
+   </td>
+   <td>1.75 mm
+   </td>
+  </tr>
+  <tr>
+   <td>Shipping Weight
+   </td>
+   <td>0.9 KG (2.0lbs)
+   </td>
+  </tr>
+  <tr>
+   <td>Net Weight
+   </td>
+   <td> 0.5 KG (1.1lbs)
+   </td>
+  </tr>
+  <tr>
+   <td>Temperatures
+   </td>
+   <td>Build Plate: 110° C(230°F); Nozzle: 220° C (428°F)
+   </td>
+  </tr>
+</table>
+
+
+Onderdelen:
+
+[https://store.flashforge.com/product-category/parts-and-accessories-for-adventurer-3/page/2/](https://store.flashforge.com/product-category/parts-and-accessories-for-adventurer-3/page/2/)
+
+Improved nozzle: [https://store.flashforge.com/product/adventurer-3-nozzle-assembly/](https://store.flashforge.com/product/adventurer-3-nozzle-assembly/)
+
+Moederboard:
+
+
+
+<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image1.png "image_tooltip")
+
+
+Zit dus direct achter de usb.
