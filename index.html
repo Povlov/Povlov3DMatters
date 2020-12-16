@@ -1,70 +1,184 @@
+
 <!-- Copy and paste the converted output. -->
 
 
-<p style="color: red; font-weight: bold">>>>>>  gd2md-html alert:  ERRORs: 0; WARNINGs: 0; ALERTS: 1.</p>
+<p style="color: red; font-weight: bold">>>>>>  gd2md-html alert:  ERRORs: 0; WARNINGs: 1; ALERTS: 10.</p>
 <ul style="color: red; font-weight: bold"><li>See top comment block for details on ERRORs and WARNINGs. <li>In the converted Markdown or HTML, search for inline alerts that start with >>>>>  gd2md-html alert:  for specific instances that need correction.</ul>
 
 <p style="color: red; font-weight: bold">Links to alert messages:</p><a href="#gdcalert1">alert1</a>
+<a href="#gdcalert2">alert2</a>
+<a href="#gdcalert3">alert3</a>
+<a href="#gdcalert4">alert4</a>
+<a href="#gdcalert5">alert5</a>
+<a href="#gdcalert6">alert6</a>
+<a href="#gdcalert7">alert7</a>
+<a href="#gdcalert8">alert8</a>
+<a href="#gdcalert9">alert9</a>
+<a href="#gdcalert10">alert10</a>
 
 <p style="color: red; font-weight: bold">>>>>> PLEASE check and correct alert issues and delete this message and the inline alerts.<hr></p>
 
 
-**PLA filament specs op de website**
+
+# Cura en PrusaSlicer op  \
+Acer Chromebook
+
+
+[TOC]
+
+
+
+# Algemeen instellingen Printer en gcode
+
+
+### In Flashprint Instellingen  \
+(extrusion volgens Flashprint support):
+
+[https://www.reddit.com/r/FlashForge/comments/c6pmk1/adventurer_3_extruder_problems/](https://www.reddit.com/r/FlashForge/comments/c6pmk1/adventurer_3_extruder_problems/)
+
+_These are the settings Flashforge sent to me. This is all in Flashprint and I'm only posting what is different than the default Adventurer 3 PLA settings._
 
 
 <table>
   <tr>
-   <td>Spool Diameter
+   <td>
+<h3>General Tab:</h3>
+
+Layer Height 0.15
+<p>
+First Layer Height 0.24
+<p>
+Temperature 205
+<p>
+Base Speed 50mm/s
+<p>
+Travel Speed 50mm/s
+<p>
+Retraction Length 1.6mm (I had stringing issues using this. Not enough for a bowden extruder in my opinion)
+<p>
+Retraction Speed 40mm/s
    </td>
-   <td>180 mm [7.1 in]
+   <td>
+<h3>Perimeter Tab:</h3>
+
+Shell count 3
    </td>
-  </tr>
-  <tr>
-   <td>Spool Hub Hole
+   <td>
+<h3>Infill Tab:</h3>
+
+Top Solid Layers 6
+<p>
+Bottom Solid Layers 5
    </td>
-   <td>20 mm [0.8 in]
+   <td>
+<h3>Advanced Tab:</h3>
+
+Stepper Motor Voltages
+<p>
+X-Axis 110
+<p>
+Y-Axis 110
+<p>
+Z-Axis 50
+<p>
+A-Axis 115
    </td>
-  </tr>
-  <tr>
-   <td>Spool Width
-   </td>
-   <td>76 mm [3.0 in]
-   </td>
-  </tr>
-  <tr>
-   <td>Filament Diameter
-   </td>
-   <td>1.75 mm
-   </td>
-  </tr>
-  <tr>
-   <td>Shipping Weight
-   </td>
-   <td>0.9 KG (2.0lbs)
-   </td>
-  </tr>
-  <tr>
-   <td>Net Weight
-   </td>
-   <td> 0.5 KG (1.1lbs)
-   </td>
-  </tr>
-  <tr>
-   <td>Temperatures
-   </td>
-   <td>Build Plate: 110° C(230°F); Nozzle: 220° C (428°F)
+   <td>
+<h3>Others</h3>
+
+Path Width .45mm
+<p>
+Extrusion Ratio 97%
    </td>
   </tr>
 </table>
 
 
-Onderdelen:
+_I had mixed results using these settings. There was still some clunking coming from the extruder, but very little. I had some stringing. The model looks like it also had minor under-extrusion in some places._
 
-[https://store.flashforge.com/product-category/parts-and-accessories-for-adventurer-3/page/2/](https://store.flashforge.com/product-category/parts-and-accessories-for-adventurer-3/page/2/)
 
-Improved nozzle: [https://store.flashforge.com/product/adventurer-3-nozzle-assembly/](https://store.flashforge.com/product/adventurer-3-nozzle-assembly/)
+### Startcode en Endcode
 
-Moederboard:
+DE printer luistert naar Marlin Flavor codes; Marlin wordt dan ook wel de firmware van de printer genoemd.  [https://marlinfw.org/meta/gcode/](https://marlinfw.org/meta/gcode/)
+
+Echter, De adventurer 3 zal waarschijnlijk het eigen Flashforge protocol gebruiken. De start- en endcode zal dus in dat protocol worden geschreven.
+
+~ ervoor wordt overgeslagen
+
+; &lt;notitie achter een instructie>  
+
+\n volgende regel of instructie
+
+[https://groups.google.com/g/flashforge/c/8A7TinFnDMQ/m/rnlg3Ncy3EYJ](https://groups.google.com/g/flashforge/c/8A7TinFnDMQ/m/rnlg3Ncy3EYJ)
+
+
+## Marlin flavor / Flashforge 
+
+Flashforge Gcode Protocol [(pdf)](https://drive.google.com/open?id=1Wx-Zsf5_aMJBAQlkDFDmD8x0d-tTqVb2)
+
+Online: [https://07124067219264757710.googlegroups.com/attach/46dc32d7dc6079ae/FlashForge%20Gcode%20Protocol(open).pdf?part=0.1&view=1&vt=ANaJVrHv8UcrirIygP9aF2yNxb5Ty5oOITtZmdR1RAlv_Ptr-nrxO1FRR0WaqAUkhRv6f0KJXvfxFNnCtrkZSJJKiOV-Gvpr2xqrNwWpPK5_mvv0PrP6UeU](https://07124067219264757710.googlegroups.com/attach/46dc32d7dc6079ae/FlashForge%20Gcode%20Protocol(open).pdf?part=0.1&view=1&vt=ANaJVrHv8UcrirIygP9aF2yNxb5Ty5oOITtZmdR1RAlv_Ptr-nrxO1FRR0WaqAUkhRv6f0KJXvfxFNnCtrkZSJJKiOV-Gvpr2xqrNwWpPK5_mvv0PrP6UeU)
+
+[http://www.customize-3d.com/g-codes-and-m-codes-for-3d-printing-1-1.html](http://www.customize-3d.com/g-codes-and-m-codes-for-3d-printing-1-1.html)
+
+
+### Eerste verkenning om Cura te kunnen instellen
+
+Instellingen op Reddit gevonden:
+
+[https://www.reddit.com/r/FlashForge/comments/dg36qv/flashforge_adventurer_3_working_with_cura_slicer/](https://www.reddit.com/r/FlashForge/comments/dg36qv/flashforge_adventurer_3_working_with_cura_slicer/)
+
+Oorspronkelijke instellingen in Cura (werkt behoorlijk:
+
+
+<table>
+  <tr>
+   <td>Begin
+   </td>
+   <td>End
+   </td>
+  </tr>
+  <tr>
+   <td>M651 ; onbekend
+<p>
+G90 ; Set to Absolute Positioning
+<p>
+G28 ; home
+<p>
+M132 X Y Z A B ; Load current home position from EEPROM
+<p>
+G1 Z50 F3300 ; move to 
+<p>
+M7 T0 ; wait for platform target temp
+<p>
+M6 T0 ; wait for toolhead target temp
+<p>
+M907 X100 Y100 Z40 A100 B20 ; set current of steppers
+   </td>
+   <td>M652 ; onbekend
+<p>
+M107 ; disable cooling fan
+<p>
+M104 S0 T0 ; set toolhead to 0 degrees
+<p>
+M140 S0 ; set platform to 0 degrees
+<p>
+G91 ; - Set to Relative Positioning
+<p>
+G1 F150 ; move with speed (slow)
+<p>
+G1 Z10 ; move to z10 (up a little)
+<p>
+G90 ; set to absolute positioning
+<p>
+G1 X0 Y0 F1200 ; move to 
+<p>
+M84 ; disable steppers
+   </td>
+  </tr>
+</table>
+
+
+Ook de printerinstellingen volgens screenprints van 4.1.0
 
 
 
@@ -74,5 +188,721 @@ Moederboard:
 ![alt_text](images/image1.png "image_tooltip")
 
 
-Zit dus direct achter de usb.
+<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
+
+![alt_text](images/image2.png "image_tooltip")
+
+
+
+### Start en endcodes in Polarcloud
+
+Het tabblad start en end code in Polarcloud staan voor mijn printer op:
+
+Startcode:
+
+xgcode 1.0 ;start gcode
+
+M140 S {TEMPBED} ; Temperature to set the platform to, in degrees C
+
+M104 S {TEMP0} T0 ; Temperature to set the toolhead to  T0 default or T1 
+
+M104 S0 T1 ; Set second toolhead to 0 degrees C non existent in Adventurer 3
+
+M107 ; Disable cooling fan
+
+G90 ; All coordinates from now on are absolute relative to the origin of the machine
+
+G28 ; Move to the home position
+
+M132 X Y Z A B ; Load current home position from EEPROM
+
+G1 Z50.00 F400 ; Move to pos Z50 at feedrate F400
+
+G161 X Y F3300 ; onbekend
+
+M6 T0 ; Wait for the toolhead to reach target temperature
+
+M907 X100 Y100 Z40 A80 B20 ; Set digital potentiometer value 
+
+M108 T0 ; Set toolhead to T0
+
+G1 Z.20 F400 ; Move to pos Z0.20 at feedrate F400
+
+endcode:
+
+M140 S0 : Set the platform to 0 degrees C
+
+M104 S0 T0 ; Set toolhead to 0 degrees C
+
+G28 X Y ; Move to home position
+
+M132 X Y Z A B ; Load current home position from EEPROM
+
+G91 ; All coordinates from now on are relative to the last position
+
+M18 ; disable stepper motors all axes
+
+Note De printresultaten in Polarcloud blijken tot dusver goed.
+
+De {} kunnen betekenen dat de waarde uit de instelling van het profiel worden aangenomen. Polarcloud maakt zelf de slice, of verwerkt een vreemde gcodefile; in dat geval staan de temperatuurinstructies voorafgaand aan de start print opdracht al met de regelaar ingesteld. Eerder heb ik geconstateerd dat een bepaalde gcode die kennelijk niet de juiste temperatuursinstructies bevatte op de ingestelde temperatuur werd verwerkt 
+
+
+### Start en endcodes in Flashprint
+
+start gcode
+
+M118 X26.60 Y26.60 Z10.00 T0
+
+M140 S50 T0 ; build platform temperatuur uit profile
+
+M104 S210 T0 ; printhead temperatuur uit profile
+
+M104 S0 T1 ; non existant printhead T1 temperatuur
+
+M107 ; disable fan
+
+G90 ; Set to Absolute Positioning
+
+G28 ; Home all axes
+
+M132 X Y Z A B ; Load current home position from EEPROM
+
+G1 Z50.000 F420 ; Move to Z50 with 420 mm/min feedrate
+
+G161 X Y F3300 ; onbekend
+
+M7 T0 ; wait for the platform to reach its target temperature
+
+M6 T0 ; wait for the toolhead to reach its target temperature
+
+M651 ; onbekend set casefan on
+
+M108 T0 ; set toolhead T0
+
+end gcode
+
+M107 ; - Disable Cooling Fan
+
+M104 S0 T0 ; Set toolhead temperature to 0
+
+M140 S0 T0 ; Set build platform temperature to 0
+
+G162 Z ; onbekend (replicatorG home positive)
+
+G28 X Y ; Home both axes
+
+M132 X Y A B ; Load current home position from EEPROM
+
+M652 ; onbekend set casefan off
+
+G91 ; Set to Relative Positioning from the last position.
+
+M18 ; Disable Axes Stepper Motor
+
+
+### start en end codes in Cura
+
+Startcode
+
+G90 ; absolute coordinates\n
+
+G28 ; home all axes\n
+
+M132 X Y Z A B ; recall home offsets\n
+
+G1 Z50 F3300 ; lower bed\n
+
+M7 T0 ; stabilize bed temperature\n
+
+M6 T0 ; stabilize extruder temperature\n
+
+M651 ; set case fan on\n
+
+M907 X100 Y100 Z40 A100 B20 ; set motor current\n
+
+Elders in Github wordt deze set aangeraden:
+
+[https://github.com/GioPalusa/adventurer3Cura/blob/master/definitions/flashforgeadventurer3.def.json](https://github.com/GioPalusa/adventurer3Cura/blob/master/definitions/flashforgeadventurer3.def.json)
+
+Hier heb ik de start en end code uit de json tekst gehaald, de \n verwijderd en enters toegevoegd en daarna in Prusa geplakt.
+
+**Start gcode**
+
+G90 ; absolute coordinates\n
+
+G28 ; home all axes\n \
+M132 X Y Z A B ; recall home offsets\n
+
+G1 Z50 F3300 ; lower bed\n
+
+M7 T0 ; stabilize bed temperature\n
+
+M6 T0 ; stabilize extruder temperature\n
+
+M651 ; set case fan on\n
+
+M907 X100 Y100 Z40 A100 B20 ; set motor current\n
+
+**End gcode**
+
+M107 ; Fan Off\n
+
+M104 S0 T0; Set Hotend Temperature\n
+
+M140 S0; Set Bed Temperature\n
+
+G1 X0 Y0 F1200; Linear Move\n
+
+M84; Disable steppers \n
+
+Motorvoltages staan dus anders in deze 2 settings.
+
+Misschien kunnen er geluiden gemaakt worden met M300 [P&lt;ms>] [S&lt;Hz>]
+
+Een machine aanmaken in Prusa met deze codes en testen.
+
+Een eenvoudig modelletje van een inlooplijn en een cirkeltje maken.
+
+
+# Cura installatie en gebruiken
+
+
+## Eerste ervaring met Cura.
+
+Ga naar de [Workflow](https://drive.google.com/open?id=1VvMjKjQo96pQP74p5uh2Ts4GPc27BeCXFioCpLFLibE).
+
+
+## Laatste update notes
+
+22 juni 2020 
+
+Nogmaals de chmod a+x Cura.AppImage gedaan en nu draait de versie.
+
+Instelling overgezet
+
+Werking inzoom aangepast (eindelijk)
+
+19 juni 2020 \
+Versie Ultimaker_Cura-4.6.1.AppImage
+
+gedownload. en ge chmod. Hij loopt wel, maar toetsen werken alleen wanneer de alt toets wordt ingedrukt!
+
+Voorlopig bij 4.1.0 blijven dus!
+
+
+## Vervolg Installatie Cura 4.1.0 op Acer Chromebook.
+
+
+```
+./Ultimaker_Cura-4.1.0.AppImage
+```
+
+
+Aantekeningen van de eerste pogingen en het downloaden van de Imagefile op de Acer kan ik niet vinden...
+
+Ineens brengt een draadje mij verder:
+
+[https://community.ultimaker.com/topic/27382-cura-on-chromebook-how/](https://community.ultimaker.com/topic/27382-cura-on-chromebook-how/)
+
+Hi,
+
+I've been running Cura 4.0, now 4.1, for a few month on my HP Chromebook X2... just great.
+
+- Download Cura AppImage, give it a simler name
+
+- Run a chmod a+x Cura.AppImage (whatever short name you gave it
+
+Done
+
+To run : open a teminal, run "./Cura.AppImage"
+
+PS : you might have to instal fuse prior, just can't remember when I installed fuse, might be standard now on latest chromeos.
+
+May the Force be with you.
+
+en:
+
+Hi, just today I received a new Chromebook (Dell 5190) and I have run one of my Cura AppImages on it. As [@Patrice](https://community.ultimaker.com/profile/390771-patrice/) says, you need to install fuse (do 'sudo apt-get install fuse') and make the Cura AppImage executable. It was a bit slow and the layer view was in compatibility mode but it definitely worked. I also installed an openscad AppImage and that works well so it would be possible to create models and slice all on the chromebook with no network connection.
+
+
+## Dus handelingen om een AppImage werkend te krijgen
+
+Plaats de file in de Linux folder
+
+chmod a+x Ultimaker_Cura-4.1.0.AppImage
+
+(al deed dat niets zichtbaars)
+
+daarna de installatie van fuse gedaan: sudo apt-get install fuse
+
+en vervolgens gestart met
+
+
+```
+./Ultimaker_Cura-4.1.0.AppImage
+```
+
+
+Een berg meldingen, maar het programma start wel op!!
+
+In text:
+
+povlov@penguin:~$ sudo appt get 
+
+.bash_history                  .bashrc                        .profile                       .Xauthority                    
+
+.bash_logout                   .config/                       Ultimaker_Cura-4.1.0.AppImage  
+
+povlov@penguin:~$ sudo apt-get install fuse
+
+Reading package lists... Done
+
+Building dependency tree       
+
+Reading state information... Done
+
+The following additional packages will be installed:
+
+  libfuse2
+
+The following NEW packages will be installed:
+
+  fuse libfuse2
+
+0 upgraded, 2 newly installed, 0 to remove and 32 not upgraded.
+
+Need to get 197 kB of archives.
+
+After this operation, 488 kB of additional disk space will be used.
+
+Do you want to continue? [Y/n] y
+
+Get:1 https://cdn-aws.deb.debian.org/debian stretch/main amd64 libfuse2 amd64 2.9.7-1+deb9u2 [126 kB]
+
+Get:2 https://cdn-aws.deb.debian.org/debian stretch/main amd64 fuse amd64 2.9.7-1+deb9u2 [71.5 kB]
+
+Fetched 197 kB in 1s (168 kB/s)
+
+debconf: delaying package configuration, since apt-utils is not installed
+
+Selecting previously unselected package libfuse2:amd64.
+
+(Reading database ... 40228 files and directories currently installed.)
+
+Preparing to unpack .../libfuse2_2.9.7-1+deb9u2_amd64.deb ...
+
+Unpacking libfuse2:amd64 (2.9.7-1+deb9u2) ...
+
+Selecting previously unselected package fuse.
+
+Preparing to unpack .../fuse_2.9.7-1+deb9u2_amd64.deb ...
+
+Unpacking fuse (2.9.7-1+deb9u2) ...
+
+Setting up libfuse2:amd64 (2.9.7-1+deb9u2) ...
+
+Processing triggers for libc-bin (2.24-11+deb9u4) ...
+
+Processing triggers for man-db (2.7.6.1-2) ...
+
+Setting up fuse (2.9.7-1+deb9u2) ...
+
+povlov@penguin:~$ chmod a+x Ultimaker_Cura-4.1.0.AppImage
+
+povlov@penguin:~$ run Ultimaker_Cura-4.1.0.AppImage
+
+-bash: run: command not found
+
+povlov@penguin:~$ ^C
+
+povlov@penguin:~$ ./Cura
+
+-bash: ./Cura: No such file or directory
+
+povlov@penguin:~$ dir
+
+Ultimaker_Cura-4.1.0.AppImage
+
+povlov@penguin:~$ ./Cura.AppImage
+
+-bash: ./Cura.AppImage: No such file or directory
+
+povlov@penguin:~$ ./Ultimaker_Cura-4.1.0.AppImage
+
+libGL error: MESA-LOADER: failed to retrieve device information
+
+MESA-LOADER: failed to retrieve device information
+
+MESA-LOADER: failed to retrieve device information
+
+Fontconfig error: "/etc/fonts/conf.d/10-scale-bitmap-fonts.conf", line 70: non-double matrix element
+
+Fontconfig error: "/etc/fonts/conf.d/10-scale-bitmap-fonts.conf", line 70: non-double matrix element
+
+Fontconfig warning: "/etc/fonts/conf.d/10-scale-bitmap-fonts.conf", line 78: saw unknown, expected number
+
+resource (nil) for handle 3, pfd=29
+
+resource (nil) for handle 3, pfd=29
+
+qml: TableViewSelection: index out of range
+
+qml: TableViewSelection: index out of range
+
+povlov@penguin:~$ ./Ultimaker_Cura-4.1.0.AppImage
+
+libGL error: MESA-LOADER: failed to retrieve device information
+
+MESA-LOADER: failed to retrieve device information
+
+MESA-LOADER: failed to retrieve device information
+
+Fontconfig error: "/etc/fonts/conf.d/10-scale-bitmap-fonts.conf", line 70: non-double matrix element
+
+Fontconfig error: "/etc/fonts/conf.d/10-scale-bitmap-fonts.conf", line 70: non-double matrix element
+
+Fontconfig warning: "/etc/fonts/conf.d/10-scale-bitmap-fonts.conf", line 78: saw unknown, expected number
+
+resource (nil) for handle 3, pfd=29
+
+resource (nil) for handle 3, pfd=29
+
+qml: TableViewSelection: index out of range
+
+qml: TableViewSelection: index out of range
+
+qml: TableViewSelection: index out of range
+
+resource (nil) for handle 4, pfd=31
+
+resource (nil) for handle 4, pfd=31
+
+resource (nil) for handle 230, pfd=31
+
+resource (nil) for handle 230, pfd=31
+
+resource (nil) for handle 230, pfd=31
+
+Empty filename passed to function
+
+povlov@penguin:~$ ^C
+
+
+
+Screenshots:
+
+
+
+<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image3.png "image_tooltip")
+
+
+
+
+<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image4.png "image_tooltip")
+
+
+
+
+
+## Cura opstarten.
+
+In account geschiedenis van Google teruggezocht:
+
+4 juli 2019 [https://ultimaker.com/software/ultimaker-cura](https://ultimaker.com/software/ultimaker-cura)
+
+De nieuwste versie download gekozen en in de Linux map geplaatst.
+
+Daarna de commando’s gedraaid:
+
+povlov@penguin:~$ chmod a+x Ultimaker_Cura-4.4.0.AppImage
+
+povlov@penguin:~$ run Ultimaker_Cura-4.4.0.AppImage
+
+4.4.0 laadt goed, maar bij gebruik is het scherm niet stabiel.
+
+
+## Thingiverse gebruiken en naar Linux downloaden
+
+Volgende stap is het inladen van een project: ik ga op zoek naar de file met de Tesla onderdelen!
+
+De site is: [https://www.thingiverse.com/thing:3109796](https://www.thingiverse.com/thing:3109796)
+
+De download is een zip, die in de linuxmap wordt geplaatst.
+
+Door de .stl file uit de map te kopieren naar de hoofdmap linux bestanden wordt de file beschikbaar in Cura, en kan ik hem bewerken en als project opslaan.
+
+Checken van de linux versie: chrome://components/
+
+Problemen met Linux oplossen
+
+Als je problemen ondervindt met Linux- of Linux-apps, probeer je de volgende stappen:
+
+Start je Chromebook opnieuw op.
+
+Controleer of je virtuele machine up-to-date is. Ga in de browser naar chrome://components. Selecteer onder 'cros-termina' Controleren op updates. Als je een update downloadt, moet je de Chromebook mogelijk opnieuw opstarten.
+
+Update je pakketten. Open de Terminal Terminal en voer deze opdracht uit: sudo apt-get update && sudo apt-get dist-upgrade
+
+Opmerking: Je moet de Chromebook wellicht opnieuw opstarten om wijzigingen door te voeren. Linux controleert na de eerste installatie en daarna elke 24 uur wanneer het actief is automatisch op nieuwe pakketten.
+
+Beide commands uitgevoerd met succes.
+
+sudo apt-get update
+
+sudo apt-get dist-upgrade
+
+
+```
+povlov@penguin:~$ sudo apt-get update
+Ign:1 https://storage.googleapis.com/cros-packages/78 stretch InRelease
+Hit:2 https://storage.googleapis.com/cros-packages/78 stretch Release
+Ign:3 https://cdn-aws.deb.debian.org/debian stretch InRelease
+Hit:4 https://cdn-aws.deb.debian.org/debian-security stretch/updates InRelease
+Hit:6 https://cdn-aws.deb.debian.org/debian stretch Release
+Reading package lists... Done
+povlov@penguin:~$ sudo apt-get dist-upgrade
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+The following packages were automatically installed and are no longer required:
+  libllvm3.9 libtxc-dxtn-s2tc
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  cros-gpu dbus-user-session iputils-ping libdrm-common libllvm7 libusb-1.0-0 usbutils
+The following packages have been kept back:
+  libglapi-mesa
+The following packages will be upgraded:
+  base-files cros-guest-tools cros-pulse-config cros-sommelier cros-sommelier-config cros-systemd-overrides debian-archive-keyring e2fslibs e2fsprogs file git git-man libcomerr2 libcups2 libdrm-amdgpu1
+  libdrm-intel1 libdrm-nouveau2 libdrm-radeon1 libdrm2 libexpat1 libgl1-mesa-dri libglib2.0-0 libglib2.0-bin libglib2.0-data libicu57 libldap-2.4-2 libldap-common libmagic-mgc libmagic1 libnghttp2-14
+  libpam-systemd libss2 libssl1.0.2 libssl1.1 libsystemd0 libudev1 libvpx4 mesa-va-drivers mesa-vdpau-drivers openssh-client openssh-server openssh-sftp-server openssl sudo systemd systemd-sysv tzdata unzip
+48 upgraded, 7 newly installed, 0 to remove and 1 not upgraded.
+Need to get 58.4 MB of archives.
+After this operation, 141 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+
+```
+
+
+De installatie duurde wel even… \
+Chromebook opnieuw opgestart.
+
+Cura succesvol gestart.
+
+Slice gemaakt en opgeslagen in standaard map.
+
+Binnen Cura vraag Map met file openen? Ja
+
+geeft een venster in ChromeOS: file:///media/fuse/crostini_90af64c6fe58fb66df13815f70f710c32abff844_termina_penguin/
+
+
+
+<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image5.png "image_tooltip")
+
+
+Dus er is een crostini omgeving.
+
+En deze dir is redelijk helder.
+
+Nu een geschikte userinterface zoeken…
+
+Versiecontrole:
+
+povlov@penguin:~$ cat /etc/*-release
+
+PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
+
+NAME="Debian GNU/Linux"
+
+VERSION_ID="9"
+
+VERSION="9 (stretch)"
+
+VERSION_CODENAME=stretch
+
+ID=debian
+
+HOME_URL="https://www.debian.org/"
+
+SUPPORT_URL="https://www.debian.org/support"
+
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+povlov@penguin:~$ ^C
+
+povlov@penguin:~$ 
+
+Wanneer ik Cinnamon kies:
+
+[https://idroot.us/install-cinnamon-debian-9/](https://idroot.us/install-cinnamon-debian-9/)
+
+
+## 23 april 2020
+
+De printer is er.
+
+Na lange tijd:
+
+
+
+<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image6.png "image_tooltip")
+
+
+[Instellingen](https://www.reddit.com/r/FlashForge/comments/dg36qv/flashforge_adventurer_3_working_with_cura_slicer/?utm_source=share&utm_medium=web2x) start en end gcode overgenomen van redditor [https://www.reddit.com/user/Mogelsvamp/](https://www.reddit.com/user/Mogelsvamp/)
+
+Uitgebreider van iemand die een Voxel (clone van AD3) gebruikt:
+
+[https://www.reddit.com/r/FlashForge/comments/dg36qv/flashforge_adventurer_3_working_with_cura_slicer/](https://www.reddit.com/r/FlashForge/comments/dg36qv/flashforge_adventurer_3_working_with_cura_slicer/)
+
+
+## Instellingen in Cura 4.1.0
+
+Deze instellingen werken goed.
+
+Vlg. Redditor Mogelsvamp ook werkend in 4.5.1
+
+
+<table>
+  <tr>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>M651
+<p>
+G90
+<p>
+G28
+<p>
+M132 X Y Z A B
+<p>
+G1 Z50 F3300
+<p>
+M7 T0
+<p>
+M6 T0
+<p>
+M907 X100 Y100 Z40 A100 B20
+   </td>
+   <td>M652
+<p>
+M107
+<p>
+M104 S0 T0
+<p>
+M140 S0
+<p>
+G91
+<p>
+G1 F150
+<p>
+G1 Z10
+<p>
+G90
+<p>
+G1 X0 Y0 F1200
+<p>
+M84
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+</table>
+
+
+
+
+<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image7.png "image_tooltip")
+
+
+
+
+<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image8.png "image_tooltip")
+
+
+Nog checken 
+
+of de head instellingen die hij gebruikt kloppen met de mijne
+
+Ik heb ze aangepast naar
+
+
+
+<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image9.png "image_tooltip")
+
+
+Verder controle van de temperatuur. Voorverwarmen helpt niet, dan gaat hij in de print toch naar ~231
+
+Volgens Reddit erg heet voor LPA, maar 123-3d beide prints hadden 223gr dacht ik; lijkt te heet 190 zou beter kunnen zijn.
+
+
+## Updaten naar Versie 4.6.1
+
+(datum 22/6/2020)
+
+Een custom printer toegevoegd.
+
+De instellingen overgenomen:
+
+ingesteld in Cura 4.6.1
+
+
+### Proefcube volgens Voorbeeld Flashprint.
+
+
+
+<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image10.png "image_tooltip")
+
+
+
+# PrusaSlicer
+
+./PrusaSlicer-2.2.0+linux-x64-202003211856.AppImage
+
+De slicer is goed op te starten en ziet er wat toegankelijker uit dan Cura.
+
+
+## Geluid en Pause
+
+Voorbeeld uit end code voor een Flashforge Creator Pro ([https://markwal.github.io/](https://markwal.github.io/))
+
+M70 P5 (We &lt;3 Making Things!)
+
+M72 P1 ; Play Ta-Da song
+
+Uit  [https://softsolder.com/](https://softsolder.com/)
+
+(RG = ReplicatorG code found here: [http://replicat.org/gcodes](http://replicat.org/gcodes) )
+
+M72 RG  Play a song or tone defined by the machine, by a P-code specifying a song type. Default songs are Error Sound (P0), a Ta-da sound (P1), and a warning sound (P2). all other sounds are user or machine specific, with P2 the default for unknown sounds.
