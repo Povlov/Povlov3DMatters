@@ -1,5 +1,3 @@
-https://github.com/Povlov/Povlov3DMatters/blob/main/PolarcloudStart-End-Codes.txt
-
 
 ## Welcome to GitHub Pages
 
